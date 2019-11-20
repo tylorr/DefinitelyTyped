@@ -139,6 +139,15 @@ type RequestCredentials_ = 'omit' | 'same-origin' | 'include';
 type RequestMode_ = 'navigate' | 'same-origin' | 'no-cors' | 'cors';
 type ResponseType_ = 'basic' | 'cors' | 'default' | 'error' | 'opaque' | 'opaqueredirect';
 
+declare interface AbortSignal extends EventTarget {
+    readonly aborted: boolean;
+}
+
+declare class AbortController {
+    readonly signal: AbortSignal;
+    abort(): void;
+}
+
 //
 // XMLHttpRequest
 //
